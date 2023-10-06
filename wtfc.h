@@ -2,7 +2,7 @@
 #define WTFC_H
 
 #include <stddef.h>
-#include <stdint.h>
+#include <inttypes.h>
 #include <limits.h>
 
 /* typedefs */
