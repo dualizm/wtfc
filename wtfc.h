@@ -44,6 +44,8 @@ typedef ptrdiff_t dptr;
 typedef uintmax_t umax;
 typedef intmax_t imax;
 
+typedef char const* str;
+
 /* limits */
 /* max */
 #define U8_MAX UINT8_MAX
