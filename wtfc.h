@@ -1,3 +1,12 @@
+/**
+ * @file wtfc.h
+ * @author ezeire (ognieff@yandex.ru)
+ * @brief Wrapping types for C
+ * @version 1.0
+ * @date 2023-10-14
+ * 
+ */
+
 #pragma once
 
 #include <stddef.h>
@@ -6,45 +15,58 @@
 #include <stdbool.h>
 #include <uchar.h>
 
-/* typedefs */
+/* 
+  new type aliases 
+*/
+
+/* uint */
 typedef uint8_t u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
 typedef uint64_t u64;
 
+/* int */
 typedef int8_t i8;
 typedef int16_t i16;
 typedef int32_t i32;
 typedef int64_t i64;
 
+/* floating numbers */
 typedef float f32;
 typedef double f64;
 typedef long double f128;
 
+/* uint_fast */
 typedef uint_fast8_t uf8;
 typedef uint_fast16_t uf16;
 typedef uint_fast32_t uf32;
 typedef uint_fast64_t uf64;
 
+/* int_fast */
 typedef int_fast8_t if8;
 typedef int_fast16_t if16;
 typedef int_fast32_t if32;
 typedef int_fast64_t if64;
 
+/* uint_least */
 typedef uint_least8_t ul8;
 typedef uint_least16_t ul16;
 typedef uint_least32_t ul32;
 typedef uint_least64_t ul64;
 
+/* unsigned integer type */
+typedef size_t usize;
+
+/* ptr */
 typedef uintptr_t uptr;
 typedef intptr_t iptr;
-
-typedef size_t usize;
 typedef ptrdiff_t dptr;
 
+/* intmax */
 typedef uintmax_t umax;
 typedef intmax_t imax;
 
+/* wchar */
 typedef char16_t ch16;
 typedef char32_t ch32;
 
@@ -56,8 +78,10 @@ typedef char* mut_str;
 typedef ch16* mut_str16;
 typedef ch32* mut_str32;
 
-/* limits */
-/* max */
+/* 
+  new maximum limits
+*/
+
 #define U8_MAX UINT8_MAX
 #define U16_MAX UINT16_MAX
 #define U32_MAX UINT32_MAX
@@ -88,7 +112,10 @@ typedef ch32* mut_str32;
 #define USIZE_MAX SIZE_MAX
 #define DPTR_MAX PTRDIFF_MAX
 
-/* min */
+/* 
+  new minimum limits
+*/
+
 #define U8_MIN UINT8_MIN
 #define U16_MIN UINT16_MIN
 #define U32_MIN UINT32_MIN
@@ -119,7 +146,9 @@ typedef ch32* mut_str32;
 #define USIZE_MIN SIZE_MIN
 #define DPTR_MIN PTRDIFF_MIN
 
-/* width */
+/* 
+  new width limits 
+*/
 #define U8_WIDTH UINT8_WIDTH
 #define U16_WIDTH UINT16_WIDTH
 #define U32_WIDTH UINT32_WIDTH
