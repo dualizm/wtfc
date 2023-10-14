@@ -1,9 +1,10 @@
-#ifndef WTFC_H
-#define WTFC_H
+#pragma once
 
 #include <stddef.h>
 #include <inttypes.h>
 #include <limits.h>
+#include <stdbool.h>
+#include <uchar.h>
 
 /* typedefs */
 typedef uint8_t u8;
@@ -44,7 +45,16 @@ typedef ptrdiff_t dptr;
 typedef uintmax_t umax;
 typedef intmax_t imax;
 
+typedef char16_t ch16;
+typedef char32_t ch32;
+
 typedef char const* str;
+typedef ch16 const* str16;
+typedef ch32 const* str32;
+
+typedef char* mut_str;
+typedef ch16* mut_str16;
+typedef ch32* mut_str32;
 
 /* limits */
 /* max */
@@ -140,4 +150,3 @@ typedef char const* str;
 #define USIZE_WIDTH SIZE_WIDTH
 #define DPTR_WIDTH PTRDIFF_WIDTH
 
-#endif /* WTFC_H */
