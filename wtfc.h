@@ -16,67 +16,126 @@
 #include <uchar.h>
 
 /* 
-  new type aliases 
+  new type aliases
+*/
+
+/*
+  immutable types
 */
 
 /* uint */
-typedef uint8_t u8;
-typedef uint16_t u16;
-typedef uint32_t u32;
-typedef uint64_t u64;
+typedef uint8_t const u8;
+typedef uint16_t const u16;
+typedef uint32_t const u32;
+typedef uint64_t const u64;
 
 /* int */
-typedef int8_t i8;
-typedef int16_t i16;
-typedef int32_t i32;
-typedef int64_t i64;
+typedef int8_t const i8;
+typedef int16_t const i16;
+typedef int32_t const i32;
+typedef int64_t const i64;
 
 /* floating numbers */
-typedef float f32;
-typedef double f64;
-typedef long double f128;
+typedef float const f32;
+typedef double const f64;
+typedef long double const f128;
 
 /* uint_fast */
-typedef uint_fast8_t uf8;
-typedef uint_fast16_t uf16;
-typedef uint_fast32_t uf32;
-typedef uint_fast64_t uf64;
+typedef uint_fast8_t const uf8;
+typedef uint_fast16_t const uf16;
+typedef uint_fast32_t const uf32;
+typedef uint_fast64_t const uf64;
 
 /* int_fast */
-typedef int_fast8_t if8;
-typedef int_fast16_t if16;
-typedef int_fast32_t if32;
-typedef int_fast64_t if64;
+typedef int_fast8_t const if8;
+typedef int_fast16_t const if16;
+typedef int_fast32_t const if32;
+typedef int_fast64_t const if64;
 
 /* uint_least */
-typedef uint_least8_t ul8;
-typedef uint_least16_t ul16;
-typedef uint_least32_t ul32;
-typedef uint_least64_t ul64;
+typedef uint_least8_t const ul8;
+typedef uint_least16_t const ul16;
+typedef uint_least32_t const ul32;
+typedef uint_least64_t const ul64;
 
 /* unsigned integer type */
-typedef size_t usize;
+typedef size_t const usize;
 
 /* ptr */
-typedef uintptr_t uptr;
-typedef intptr_t iptr;
-typedef ptrdiff_t dptr;
+typedef uintptr_t const uptr;
+typedef intptr_t const iptr;
+typedef ptrdiff_t const dptr;
 
 /* intmax */
-typedef uintmax_t umax;
-typedef intmax_t imax;
+typedef uintmax_t const umax;
+typedef intmax_t const imax;
 
 /* wchar */
-typedef char16_t ch16;
-typedef char32_t ch32;
+typedef char16_t const ch16;
+typedef char32_t const ch32;
 
 typedef char const* str;
-typedef ch16 const* str16;
-typedef ch32 const* str32;
+typedef ch16* str16;
+typedef ch32* str32;
+
+/*
+  mutable types
+*/
+
+/* uint */
+typedef uint8_t mut_u8;
+typedef uint16_t mut_u16;
+typedef uint32_t mut_u32;
+typedef uint64_t mut_u64;
+
+/* int */
+typedef int8_t mut_i8;
+typedef int16_t mut_i16;
+typedef int32_t mut_i32;
+typedef int64_t mut_i64;
+
+/* floating numbers */
+typedef float mut_f32;
+typedef double mut_f64;
+typedef long double mut_f128;
+
+/* uint_fast */
+typedef uint_fast8_t mut_uf8;
+typedef uint_fast16_t mut_uf16;
+typedef uint_fast32_t mut_uf32;
+typedef uint_fast64_t mut_uf64;
+
+/* int_fast */
+typedef int_fast8_t mut_if8;
+typedef int_fast16_t mut_if16;
+typedef int_fast32_t mut_if32;
+typedef int_fast64_t mut_if64;
+
+/* uint_least */
+typedef uint_least8_t mut_ul8;
+typedef uint_least16_t mut_ul16;
+typedef uint_least32_t mut_ul32;
+typedef uint_least64_t mut_ul64;
+
+/* unsigned integer type */
+typedef size_t mut_usize;
+
+/* ptr */
+typedef uintptr_t mut_uptr;
+typedef intptr_t mut_iptr;
+typedef ptrdiff_t mut_dptr;
+
+/* intmax */
+typedef uintmax_t mut_umax;
+typedef intmax_t mut_imax;
+
+/* wchar */
+typedef char16_t mut_ch16;
+typedef char32_t mut_ch32;
 
 typedef char* mut_str;
-typedef ch16* mut_str16;
-typedef ch32* mut_str32;
+typedef mut_ch16* mut_str16;
+typedef mut_ch32* mut_str32;
 
 /* 
   new maximum limits
