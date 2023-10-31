@@ -2,7 +2,7 @@
  * @file wtfc.h
  * @author ezeire (ognieff@yandex.ru)
  * @brief Wrapping types for C
- * @version 1.1
+ * @version 1.2
  * @date 2023-10-14
  * 
  */
@@ -23,6 +23,18 @@
 /*
   immutable types
 */
+
+/* any size types */
+typedef short const any_short;
+typedef int const any_int;
+typedef long const any_long;
+typedef long long const any_llong;
+
+/* any unsigned size types */
+typedef unsigned short const any_ushort;
+typedef unsigned int const any_uint;
+typedef unsigned long const any_ulong;
+typedef unsigned long long const any_ullong;
 
 /* uint */
 typedef uint8_t const u8;
@@ -59,8 +71,8 @@ typedef uint_least16_t const ul16;
 typedef uint_least32_t const ul32;
 typedef uint_least64_t const ul64;
 
-/* unsigned integer type */
-typedef size_t const usize;
+/* size_t */
+typedef size_t const usz;
 
 /* ptr */
 typedef uintptr_t const uptr;
@@ -82,6 +94,18 @@ typedef ch32* str32;
 /*
   mutable types
 */
+
+/* n size types */
+typedef short mut_any_short;
+typedef int mut_any_int;
+typedef long mut_any_long;
+typedef long long mut_any_llong;
+
+/* n unsigned size types */
+typedef unsigned short mut_any_ushort;
+typedef unsigned int mut_any_uint;
+typedef unsigned long mut_any_ulong;
+typedef unsigned long long mut_any_ullong;
 
 /* uint */
 typedef uint8_t mut_u8;
@@ -118,8 +142,8 @@ typedef uint_least16_t mut_ul16;
 typedef uint_least32_t mut_ul32;
 typedef uint_least64_t mut_ul64;
 
-/* unsigned integer type */
-typedef size_t mut_usize;
+/* size_t */
+typedef size_t mut_usz;
 
 /* ptr */
 typedef uintptr_t mut_uptr;
@@ -169,7 +193,7 @@ typedef mut_ch32* mut_str32;
 #define UPTR_MAX UINTPTR_MAX
 #define IPTR_MAX INTPTR_MAX
 
-#define USIZE_MAX SIZE_MAX
+#define USZ_MAX SIZE_MAX
 #define DPTR_MAX PTRDIFF_MAX
 
 /* 
@@ -203,7 +227,7 @@ typedef mut_ch32* mut_str32;
 #define UPTR_MIN UINTPTR_MIN
 #define IPTR_MIN INTPTR_MIN
 
-#define USIZE_MIN SIZE_MIN
+#define USZ_MIN SIZE_MIN
 #define DPTR_MIN PTRDIFF_MIN
 
 /* 
@@ -220,9 +244,9 @@ typedef mut_ch32* mut_str32;
 #define I32_WIDTH INT32_WIDTH
 #define I64_WIDTH INT64_WIDTH
 
-#define F32_WIDTH __FLT_WIDTH__
-#define F64_WIDTH __DBL_WIDTH__
-#define F128_WIDTH __LDBL_WIDTH__
+#define F32_WIDTH FLT_WIDTH
+#define F64_WIDTH DBL_WIDTH
+#define F128_WIDTH LDBL_WIDTH
 
 #define UF8_WIDTH UINT_FAST8_WIDTH
 #define UF16_WIDTH UINT_FAST16_WIDTH
@@ -237,7 +261,7 @@ typedef mut_ch32* mut_str32;
 #define UPTR_WIDTH UINTPTR_WIDTH
 #define IPTR_WIDTH INTPTR_WIDTH
 
-#define USIZE_WIDTH SIZE_WIDTH
+#define USZ_WIDTH SIZE_WIDTH
 #define DPTR_WIDTH PTRDIFF_WIDTH
 
 /*
