@@ -41,7 +41,6 @@ Wrapping types for C
 | char16_t const\*     | str16               | char16_t \*       | mut_str16         |
 | char32_t const\*     | str32               | char32_t \*       | mut_str32         |
 
-
 ## Example
 
 ```c
@@ -67,7 +66,7 @@ int main(void) {
 mut_str16 strncpy16(mut_str16 dest, str16 src, usize limit) {
   mut_str16 tmp = dest;
   mut_usize limit_iter = limit;
-  while ((*tmp++ = *src++) != 0 && limit_iter--)
+  while ((*tmp++ = *src++) != 0 && --limit_iter)
     ;
   return dest;
 }
