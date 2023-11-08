@@ -2,7 +2,11 @@
 
 Wrapping types for C
 
-## New types
+## How to install
+
+The wtfc.h file can be placed in a C project and compiled with it.
+
+## Types
 
 | old immutable types      | new immutable types | old mutable types  | new mutable types |
 | ------------------------ | ------------------- | ------------------ | ----------------- |
@@ -29,17 +33,17 @@ Wrapping types for C
 | uint_least16_t const     | ul16                | uint_least16_t     | mut_ul16          |
 | uint_least32_t const     | ul32                | uint_least32_t     | mut_ul32          |
 | uint_least64_t const     | ul64                | uint_least64_t     | mut_ul64          |
-| short const              | any_short           | short              | mut_any_short     |
-| int const                | any_int             | int                | mut_any_int       |
-| long const               | any_long            | long               | mut_any_long      |
-| long long const          | any_llong           | long long          | mut_any_llong     |
-| unsigned short const     | any_ushort          | unsigned short     | mut_any_ushort    |
-| unsigned int const       | any_uint            | unsigned int       | mut_any_uint      |
-| unsigned long const      | any_ulong           | unsigned long      | mut_any_ulong     |
-| unsigned long long const | any_ullong          | unsigned long long | mut_any_ullong    |
+| short const              | Short               | short              | mut_short         |
+| int const                | Int                 | int                | mut_int           |
+| long const               | Long                | long               | mut_long          |
+| long long const          | LLong               | long long          | mut_llong         |
+| unsigned short const     | UShort              | unsigned short     | mut_ushort        |
+| unsigned int const       | UInt                | unsigned int       | mut_uint          |
+| unsigned long const      | ULong               | unsigned long      | mut_ulong         |
+| unsigned long long const | ULLong              | unsigned long long | mut_ullong        |
 | uintptr_t const          | uptr                | uintptr_t          | mut_uptr          |
 | intptr_t const           | iptr                | intptr_t           | mut_iptr          |
-| size_t const             | usize               | size_t             | mut_usize         |
+| size_t const             | usz                 | size_t             | mut_usz           |
 | ptrdiff_t const          | dptr                | ptrdiff_t          | mut_dptr          |
 | uintmax_t const          | umax                | uintmax_t          | mut_umax          |
 | intmax_t const           | imax                | intmax_t           | mut_imax          |
@@ -49,7 +53,7 @@ Wrapping types for C
 | char16_t const\*         | str16               | char16_t \*        | mut_str16         |
 | char32_t const\*         | str32               | char32_t \*        | mut_str32         |
 
-## Example
+## Usage
 
 ```c
 
@@ -71,24 +75,16 @@ int main(void) {
 
 #include "wtfc.h"
 
-mut_str16 strncpy16(mut_str16 dest, str16 src, usize limit) {
-  mut_str16 tmp = dest;
-  mut_usize limit_iter = limit;
-  while ((*tmp++ = *src++) != 0 && --limit_iter)
-    ;
-  return dest;
-}
-
-usize strnlen16(str16 text, usize limit) {
+usz strnlen16(str16 text, usz limit) {
   if (!text)
     return 0;
 
   str16 iter = text;
-  mut_usize limit_iter = limit;
+  mut_usz limit_iter = limit;
   for (; *iter && limit_iter--; ++iter)
     ;
 
-  return (usize)(iter - text);
+  return (usz)(iter - text);
 }
 
 ```
