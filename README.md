@@ -62,10 +62,11 @@ The wtfc.h file can be placed in a C project and compiled with it.
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-  i32 x = 5;
-  i32 y = 10;
-  printf("%" PRIi64 "\n", x + y);
+mut_int main(void) {
+  i32 x = 34;
+  i32 y = 8;
+  printf("x + y = %" PRIi32 "\n", x + y);
+
   return EXIT_SUCCESS;
 }
 

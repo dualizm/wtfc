@@ -2,7 +2,7 @@
  * @file wtfc.h
  * @author ezeire (ognieff@yandex.ru)
  * @brief Wrapping types for C
- * @version 1.3
+ * @version 1.4
  * @date 2023-10-14
  * 
  =========================================================================*/
